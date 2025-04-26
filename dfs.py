@@ -16,9 +16,9 @@ def dfs_path_length(graph, start_node, end_node):
             neighbors = graph[node] if node in graph else []
             for neighbor in neighbors:
                 stack.append((neighbor, path_length + 1))
-    return -1  # Путь не найден
+    return -1  # Path not found
 
-# Пример
+# An example of finding a path
 graph = {1: [3], 2: [4], 4: [2]}
 
 # Начальная и конечная точка
