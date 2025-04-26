@@ -1,5 +1,5 @@
 def dfs_path_length(graph, start_node, end_node):
-    # Проверяем начальную и конечную вершины в графе
+    # Checking the starting and ending vertices in the graph
     if start_node not in graph or end_node not in graph:
         print("Error: Invalid start or end node")
         return -1
@@ -10,16 +10,16 @@ def dfs_path_length(graph, start_node, end_node):
     while stack:
         node, path_length = stack.pop()
         if node == end_node:
-            return path_length  # Путь найден
+            return path_length  # The path has been found
         if node not in visited:
             visited.add(node)
             neighbors = graph[node] if node in graph else []
             for neighbor in neighbors:
                 stack.append((neighbor, path_length + 1))
 
-    return -1  #Путь не найден
+    return -1  # Path not found
 
-#Пример
+#An example of finding a path
 graph = {1: [3], 2: [4], 4: [2]}
 
 start_node = 2
